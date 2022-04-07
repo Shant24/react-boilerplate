@@ -16,7 +16,48 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@styles/*": ["assets/styles/*"],
+
+      "@components/*": ["components/*"],
+      "@common/*": ["components/common/*"],
+      "@images/*": ["components/images/*"],
+      "@layouts": ["components/layouts"],
+      "@layouts/*": ["components/layouts/*"],
+      "@shared": ["components/shared"],
+      "@shared/*": ["components/shared/*"],
+
+      "@pages": ["pages"],
+      "@pages/*": ["pages/*"],
+
+      "@configs": ["configs"],
+      "@configs/*": ["configs/*"],
+
+      "@contexts": ["contexts"],
+      "@contexts/*": ["contexts/*"],
+
+      "@graphql": ["graphql"],
+      "@graphql/*": ["graphql/*"],
+
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+
+      "@store": ["store"],
+      "@store/*": ["store/*"],
+
+      "@theme": ["theme"],
+      "@theme/*": ["theme/*"],
+
+      "@appTypes": ["types"],
+      "@appTypes/*": ["types/*"],
+
+      "@utils/*": ["utils/*"],
+
+      "@validations": ["validations"],
+      "@validations/*": ["validations/*"]
+    }
   },
   "include": ["src"]
 }

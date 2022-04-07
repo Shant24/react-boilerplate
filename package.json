@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "react-scripts start",
+    "dev": "craco start",
     "start": "serve -s build",
-    "build": "react-scripts build",
+    "build": "craco build",
     "eject": "react-scripts eject",
     "tsc": "tsc"
   },
@@ -21,11 +21,13 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@craco/craco": "7.0.0-alpha.3",
+    "@types/craco__craco": "^6.4.0",
     "@types/node": "^17.0.23",
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@types/react-redux": "^7.1.23",
-    "@types/styled-components": "^5.1.24",
+    "@types/styled-components": "^5.1.25",
     "typescript": "~4.6.3"
   },
   "eslintConfig": {
