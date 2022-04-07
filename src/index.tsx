@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 
-import './index.css';
 import { store } from './store';
 import { history } from './configs/history';
 import * as serviceWorker from './serviceWorker';
+import { GlobalStyles } from 'assets/styles/globalStyles';
 import App from './App';
 
 /**
@@ -31,6 +31,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <HistoryRouter history={history}>
+        <GlobalStyles />
         <App />
       </HistoryRouter>
     </Provider>
