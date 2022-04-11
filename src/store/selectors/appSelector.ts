@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { RootState } from '../';
-import { AppStatePathName } from '../slices/appSlice';
+import { RootState } from '@store';
+import { AppStatePathName } from '@store/slices/appSlice';
 
 export const selectApp = (state: RootState) => state[AppStatePathName];
 

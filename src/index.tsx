@@ -1,14 +1,14 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import CssBaseline from '@mui/material/CssBaseline';
 
+import { history } from '@configs/history';
+import { store } from '@store';
 import { theme } from '@theme';
-import { store } from './store';
-import { history } from './configs/history';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
@@ -18,13 +18,17 @@ import App from './App';
  * @returns root element
  */
 const getRootElement = () => {
-  let rootElement = document.getElementById('root');
+  const rootElement = document.getElementById('root');
+
   if (rootElement) {
     return rootElement;
   }
+
   const div = document.createElement('div');
+
   div.id = 'root';
   document.body.appendChild(div);
+
   return div;
 };
 
@@ -32,20 +36,22 @@ const root = ReactDOM.createRoot(getRootElement());
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <HistoryRouter history={history}>
+    <HistoryRouter history={history}>
+      <Provider store={store}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <App />
         </ThemeProvider>
-      </HistoryRouter>
-    </Provider>
+      </Provider>
+    </HistoryRouter>
   </React.StrictMode>,
 );
 
 // serviceWorker.unregister();
 serviceWorker.register({
+  // eslint-disable-next-line no-console
   onSuccess: () => console.log('Service Worker Registered'),
+  // eslint-disable-next-line no-console
   onUpdate: () => console.log('Service Worker Updated'),
 });
 

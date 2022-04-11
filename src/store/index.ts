@@ -1,5 +1,6 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import appReducer, { AppStatePathName } from './slices/appSlice';
+
+import appReducer, { AppStatePathName } from '@store/slices/appSlice';
 
 export const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',

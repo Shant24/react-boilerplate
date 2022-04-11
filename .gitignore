@@ -30,3 +30,6 @@ yarn.lock
 # editor configs
 .idea
 .vscode
+
+# eslint cache
+.eslintcache

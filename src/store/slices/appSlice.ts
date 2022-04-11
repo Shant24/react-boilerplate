@@ -35,11 +35,11 @@ export const counterSlice = createSlice({
       .addCase(exampleAsync.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(exampleAsync.fulfilled, (state, action) => {
+      .addCase(exampleAsync.fulfilled, (state) => {
         state.isLoading = false;
         state.isLoaded = true;
       })
-      .addCase(exampleAsync.rejected, (state, action) => {
+      .addCase(exampleAsync.rejected, (state) => {
         state.isLoading = false;
         state.isLoaded = true;
       });
