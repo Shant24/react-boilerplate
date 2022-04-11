@@ -3,12 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
+import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import CssBaseline from '@mui/material/CssBaseline';
 
+import { theme } from '@theme';
 import { store } from './store';
 import { history } from './configs/history';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
-import { GlobalStyles } from 'assets/styles/globalStyles';
 import App from './App';
 
 /**
@@ -32,8 +34,10 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <HistoryRouter history={history}>
-        <GlobalStyles />
-        <App />
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
       </HistoryRouter>
     </Provider>
   </React.StrictMode>,

@@ -3,6 +3,8 @@ import path from 'path';
 const config = {
   webpack: {
     alias: {
+      '@mui/styled-engine': path.resolve(__dirname, './node_modules/@mui/styled-engine-sc'),
+
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@styles': path.resolve(__dirname, 'src/assets/styles'),
 
