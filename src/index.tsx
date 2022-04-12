@@ -8,7 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import { history } from '@configs/history';
 import { store } from '@store';
-import { theme } from '@theme';
+import theme from '@theme';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
