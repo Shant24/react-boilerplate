@@ -8,7 +8,6 @@ const config = {
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@styles': path.resolve(__dirname, 'src/assets/styles'),
 
-      '@components': path.resolve(__dirname, 'src/components'),
       '@common': path.resolve(__dirname, 'src/components/common'),
       '@images': path.resolve(__dirname, 'src/components/images'),
       '@layouts': path.resolve(__dirname, 'src/components/layouts'),

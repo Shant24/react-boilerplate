@@ -23,7 +23,6 @@
       "@assets/*": ["assets/*"],
       "@styles/*": ["assets/styles/*"],
 
-      "@components/*": ["components/*"],
       "@common/*": ["components/common/*"],
       "@images/*": ["components/images/*"],
       "@layouts": ["components/layouts"],

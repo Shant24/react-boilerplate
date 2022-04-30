@@ -1,9 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
+import { ENVIRONMENT } from '@utils/constants';
 import appReducer, { AppStatePathName } from '@store/slices/appSlice';
 
 export const store = configureStore({
-  devTools: process.env.NODE_ENV !== 'production',
+  devTools: ENVIRONMENT.isDev,
   reducer: {
     [AppStatePathName]: appReducer,
   },

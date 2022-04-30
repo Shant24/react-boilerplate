@@ -1,0 +1,39 @@
+{
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.eslint.autofix": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "path-intellisense.mappings": {
+    "@assets": "${workspaceRoot}/src/assets",
+    "@styles": "${workspaceRoot}/src/assets/styles",
+
+    "@common": "${workspaceRoot}/src/components/common",
+    "@images": "${workspaceRoot}/src/components/images",
+    "@layouts": "${workspaceRoot}/src/components/layouts",
+    "@shared": "${workspaceRoot}/src/components/shared",
+
+    "@pages": "${workspaceRoot}/src/pages",
+
+    "@configs": "${workspaceRoot}/src/configs",
+
+    "@contexts": "${workspaceRoot}/src/contexts",
+
+    "@graphql": "${workspaceRoot}/src/graphql",
+
+    "@hooks": "${workspaceRoot}/src/hooks",
+
+    "@store": "${workspaceRoot}/src/store",
+
+    "@theme": "${workspaceRoot}/src/theme",
+
+    "@appTypes": "${workspaceRoot}/src/types",
+
+    "@utils": "${workspaceRoot}/src/utils",
+
+    "@validations": "${workspaceRoot}/src/validations"
+  },
+  "cSpell.words": ["appbar", "Roboto"]
+}

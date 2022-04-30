@@ -27,9 +27,8 @@ tsconfig.tsbuildinfo
 package-lock.json
 yarn.lock
 
-# editor configs
+# editor config
 .idea
-.vscode
 
 # eslint cache
 .eslintcache

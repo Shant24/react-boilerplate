@@ -13,26 +13,7 @@ import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
-/**
- * @description it is the entry point of the application
- * @returns root element
- */
-const getRootElement = () => {
-  const rootElement = document.getElementById('root');
-
-  if (rootElement) {
-    return rootElement;
-  }
-
-  const div = document.createElement('div');
-
-  div.id = 'root';
-  document.body.appendChild(div);
-
-  return div;
-};
-
-const root = ReactDOM.createRoot(getRootElement());
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
@@ -58,4 +39,6 @@ serviceWorker.register({
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// eslint-disable-next-line no-console
+// reportWebVitals(ENVIRONMENT.isDev ? console.log : undefined);
 reportWebVitals();
