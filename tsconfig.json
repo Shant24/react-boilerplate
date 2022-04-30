@@ -48,6 +48,9 @@
       "@store": ["store"],
       "@store/*": ["store/*"],
 
+      "@services": ["services"],
+      "@services/*": ["services/*"],
+
       "@theme": ["theme"],
       "@theme/*": ["theme/*"],
 

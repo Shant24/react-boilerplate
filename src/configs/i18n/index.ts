@@ -28,7 +28,7 @@ i18n.loadLocaleData({
 });
 
 export const getLocale = (): LocaleType => {
-  const foundLocale = detect(fromStorage(LOCAL_STORAGE_KEYS.locale), fromNavigator, () => defaultLocale) || '';
+  const foundLocale = detect(fromStorage(LOCAL_STORAGE_KEYS.LOCALE), fromNavigator, () => defaultLocale) || '';
 
   return (getIsAllowedLocale(foundLocale) ? foundLocale : defaultLocale) as LocaleType;
 };
@@ -41,7 +41,7 @@ export const dynamicActivateLocale = async (locale: LocaleType | string, needToS
   document.documentElement.lang = locale;
 
   if (needToSetToLocalStorage) {
-    StorageManager.local.setItem(LOCAL_STORAGE_KEYS.locale, locale, false);
+    StorageManager.local.setItem(LOCAL_STORAGE_KEYS.LOCALE, locale, false);
   }
 };
 

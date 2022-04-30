@@ -16,9 +16,11 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const withStrictMode: boolean = false;
+const Container = withStrictMode ? React.StrictMode : React.Fragment;
 
 root.render(
-  <React.StrictMode>
+  <Container>
     <HistoryRouter history={history}>
       <Provider store={store}>
         <ThemeProvider theme={theme}>
@@ -27,7 +29,7 @@ root.render(
         </ThemeProvider>
       </Provider>
     </HistoryRouter>
-  </React.StrictMode>,
+  </Container>,
 );
 
 if (ENVIRONMENT.isDev) {

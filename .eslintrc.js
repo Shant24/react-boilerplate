@@ -60,6 +60,9 @@ module.exports = {
           { pattern: '@store', group: 'sibling' },
           { pattern: '@store/**', group: 'sibling' },
 
+          { pattern: '@services', group: 'sibling' },
+          { pattern: '@services/**', group: 'sibling' },
+
           { pattern: '@theme', group: 'sibling' },
           { pattern: '@theme/**', group: 'sibling' },
 

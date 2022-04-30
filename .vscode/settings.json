@@ -27,6 +27,8 @@
 
     "@store": "${workspaceRoot}/src/store",
 
+    "@services": "${workspaceRoot}/src/services",
+
     "@theme": "${workspaceRoot}/src/theme",
 
     "@appTypes": "${workspaceRoot}/src/types",
@@ -35,5 +37,5 @@
 
     "@validations": "${workspaceRoot}/src/validations"
   },
-  "cSpell.words": ["appbar", "craco", "prettierrc", "Roboto"]
+  "cSpell.words": ["appbar", "craco", "prettierrc", "Roboto", "toastify"]
 }

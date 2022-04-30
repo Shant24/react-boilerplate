@@ -23,6 +23,8 @@ const config = {
 
       '@store': path.resolve(__dirname, 'src/store'),
 
+      '@services': path.resolve(__dirname, 'src/services'),
+
       '@theme': path.resolve(__dirname, 'src/theme'),
 
       '@appTypes': path.resolve(__dirname, 'src/types'),
