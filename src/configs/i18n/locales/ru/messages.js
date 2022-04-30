@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"About us":"О нас","Account":"Учетная запись","Armenian":"Армянский","Dashboard":"Панель приборов","English":"Английский","Go to About us page":"Перейти на страницу о нас","Go to Home page":"Перейдите на домашнюю страницу","Home":"Домашняя страница","Logout":"Выйти","Russian":"Русский"}};

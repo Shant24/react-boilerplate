@@ -8,6 +8,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import { history } from '@configs/history';
 import { store } from '@store';
+import { ENVIRONMENT } from '@utils/constants';
+import { initDebuggerForTesting } from '@utils/helpers';
 import theme from '@theme';
 import * as serviceWorker from './serviceWorker';
 import reportWebVitals from './reportWebVitals';
@@ -27,6 +29,10 @@ root.render(
     </HistoryRouter>
   </React.StrictMode>,
 );
+
+if (ENVIRONMENT.isDev) {
+  initDebuggerForTesting();
+}
 
 // serviceWorker.unregister();
 serviceWorker.register({

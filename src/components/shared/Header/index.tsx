@@ -1,5 +1,7 @@
 import { memo, MouseEvent, useState } from 'react';
 
+import { useLingui } from '@lingui/react';
+import { defineMessage, Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
@@ -16,11 +18,12 @@ import Avatar from '@mui/material/Avatar';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 import { PagesEnum } from '@appTypes/pages';
-// import { STORAGE_KEYS } from '@utils/constants';
+
+import { dynamicActivateLocale } from '@configs/i18n';
 
 const pages = [
-  { to: PagesEnum.HOME, text: 'Home' },
-  { to: PagesEnum.ABOUT, text: 'About' },
+  { to: PagesEnum.HOME, text: defineMessage({ message: 'Home' }) },
+  { to: PagesEnum.ABOUT, text: defineMessage({ message: 'About us' }) },
 ];
 
 export const languages = {
@@ -30,14 +33,20 @@ export const languages = {
 };
 
 export const languageNameList = [
-  { label: 'English', value: 'en' },
-  { label: 'Russian', value: 'ru' },
-  { label: 'Armenian', value: 'hy' },
+  { label: defineMessage({ message: 'English' }), value: 'en' },
+  { label: defineMessage({ message: 'Russian' }), value: 'ru' },
+  { label: defineMessage({ message: 'Armenian' }), value: 'hy' },
 ];
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [
+  defineMessage({ message: 'Home' }),
+  defineMessage({ message: 'Account' }),
+  defineMessage({ message: 'Dashboard' }),
+  defineMessage({ message: 'Logout' }),
+];
 
 const Header = () => {
+  const { i18n } = useLingui();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -60,6 +69,7 @@ const Header = () => {
   const handleLanguageChange = (e: SelectChangeEvent<string>) => {
     // eslint-disable-next-line no-console
     console.log('e.target.value', e.target.value);
+    dynamicActivateLocale(e.target.value);
   };
 
   return (
@@ -92,9 +102,9 @@ const Header = () => {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map(({ to, text }) => (
-                <Link key={text} to={to} onClick={handleCloseNavMenu}>
+                <Link key={text.id} to={to} onClick={handleCloseNavMenu}>
                   <MenuItem>
-                    <Typography textAlign="center">{text}</Typography>
+                    <Typography textAlign="center">{text.id}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -107,8 +117,10 @@ const Header = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(({ to, text }) => (
-              <Link key={text} to={to}>
-                <Button sx={{ color: 'white', display: 'block' }}>{text}</Button>
+              <Link key={text.id} to={to}>
+                <Button sx={{ color: 'white', display: 'block' }}>
+                  <Trans id={text.id} />
+                </Button>
               </Link>
             ))}
           </Box>
@@ -116,13 +128,29 @@ const Header = () => {
           <Box>
             <Select
               variant="standard"
-              sx={{ ':before': { border: 'none' }, ':after': { border: 'none' }, background: 'transparent' }}
-              value={languages.en}
+              sx={{
+                mr: 3,
+                color: 'white',
+                background: 'transparent',
+
+                ':hover': {
+                  ':before': { border: 'none !important' },
+                  ':after': { border: 'none !important' },
+                },
+                ':before': { border: 'none !important' },
+                ':after': { border: 'none !important' },
+
+                svg: { path: { fill: 'white' } },
+                '.MuiInput-input.MuiInputBase-input:focus': {
+                  backgroundColor: 'transparent',
+                },
+              }}
+              value={i18n.locale}
               onChange={handleLanguageChange}
             >
               {languageNameList.map(({ label, value }) => (
                 <MenuItem key={value} value={value}>
-                  {label}
+                  <Trans id={label.id} />
                 </MenuItem>
               ))}
             </Select>
@@ -144,8 +172,10 @@ const Header = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem key={setting.id} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">
+                    <Trans id={setting.id} />
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>

@@ -3,6 +3,6 @@ export const ENVIRONMENT = {
   isProd: process.env.NODE_ENV === 'production',
 };
 
-export const STORAGE_KEYS = {
-  locale: process.env.REACT_APP_LANGUAGE_STORAGE_KEY,
+export const LOCAL_STORAGE_KEYS = {
+  locale: process.env.REACT_APP_LANGUAGE_STORAGE_KEY || '',
 };

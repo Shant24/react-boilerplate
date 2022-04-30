@@ -35,5 +35,5 @@
 
     "@validations": "${workspaceRoot}/src/validations"
   },
-  "cSpell.words": ["appbar", "Roboto"]
+  "cSpell.words": ["appbar", "craco", "prettierrc", "Roboto"]
 }
