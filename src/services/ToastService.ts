@@ -20,23 +20,23 @@ class ToastService {
     draggable: true,
   };
 
-  successToast(message: string, options?: ToastOptions) {
+  success(message: string, options?: ToastOptions) {
     toast(message, { ...this.initialOptions, ...options, type: TOAST_TYPES.SUCCESS });
   }
 
-  warningToast(message: string, options?: ToastOptions) {
+  warning(message: string, options?: ToastOptions) {
     toast(message, { ...this.initialOptions, ...options, type: TOAST_TYPES.WARNING });
   }
 
-  errorToast(message: string, options?: ToastOptions) {
+  error(message: string, options?: ToastOptions) {
     toast(message, { ...this.initialOptions, ...options, type: TOAST_TYPES.ERROR });
   }
 
-  infoToast(message: string, options?: ToastOptions) {
+  info(message: string, options?: ToastOptions) {
     toast(message, { ...this.initialOptions, ...options, type: TOAST_TYPES.INFO });
   }
 
-  toast(message: string, options?: ToastOptions) {
+  default(message: string, options?: ToastOptions) {
     toast(message, { ...this.initialOptions, ...options, type: TOAST_TYPES.DEFAULT });
   }
 }
