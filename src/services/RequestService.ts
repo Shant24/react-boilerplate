@@ -53,7 +53,7 @@ class RequestService implements IApiClient {
     }
 
     if (showToast) {
-      ToastService.errorToast(message);
+      ToastService.error(message);
     }
 
     if (updateToken) {

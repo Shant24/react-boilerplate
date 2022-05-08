@@ -13,7 +13,7 @@ const App = () => {
   useMount(() => {
     dynamicActivateLocale(getLocale());
 
-    ToastService.infoToast('Welcome to my Boilerplate!', { position: 'bottom-left', autoClose: false });
+    ToastService.info('Welcome to my Boilerplate!', { position: 'bottom-left', autoClose: false });
   });
 
   return (
